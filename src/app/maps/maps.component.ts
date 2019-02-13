@@ -12,9 +12,10 @@ export class MapsComponent implements OnInit, OnChanges {
   @Input() addMarkerCords: AddMarkerCords
   lat: string = ''
   lng: string = ''
+
   constructor(private map: MapsService) { }
 
-  setCords(cords) {
+  setCords(cords:any) {
     this.lat = cords.lat
     this.lng = cords.lng
   }
