@@ -1,4 +1,4 @@
-import { Component, Input, Output,EventEmitter,OnChanges } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 import { LocationsService } from "./locations.service";
 
 @Component({
@@ -8,7 +8,9 @@ import { LocationsService } from "./locations.service";
 })
 export class LocationsComponent implements OnChanges {
   private locations = []
+  private action: string = 'Add Marker'
   @Input() coordinates: Coordinates
+  @Output() locationEvent = new EventEmitter<any>()
   constructor(private locationService: LocationsService) { }
 
   ngOnChanges() {
@@ -20,10 +22,8 @@ export class LocationsComponent implements OnChanges {
         })
         this.locations = data
         this.locations.sort((a, b) => a.distance - b.distance)
-      }
-      )
+      })
   }
-  @Output() locationEvent = new EventEmitter<any>()
 
   addMarker(location) {
     this.locationEvent.emit(location)

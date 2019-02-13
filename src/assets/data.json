@@ -22,7 +22,7 @@
          "lng": 34.793
      }, {
          "name": "Shufersal",
-         "address": "דוחי",
+         "address": "ים התיכון",
          "lat": 32.552,
          "lng": 34.251
      }, {
@@ -49,8 +49,18 @@
          "lng": 30.783
      }, {
          "name": "Shufersal",
-         "address": "כתובת",
-         "lat": 29.215,
-         "lng": 31.857
+         "address": "ארלוזורוב",
+         "lat": 32.087,
+         "lng": 34.780
+     }, {
+         "name": "Shufersal",
+         "address": "ראשון לציון",
+         "lat": 31.997,
+         "lng": 34.813
+     }, {
+         "name": "Shufersal",
+         "address": "שמוטקין, תל אביב",
+         "lat": 32.087,
+         "lng": 34.777
      }
  ]

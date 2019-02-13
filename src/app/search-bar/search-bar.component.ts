@@ -18,6 +18,8 @@ export class SearchBarComponent implements OnInit {
     this.showMap = true
     this.zone.run(() => {
       this.coordinates = addrObj
+      // console.log(this.coordinates.lat);
+      // console.log(this.coordinates.lng);
     });
   }
   showUserLocation() {
