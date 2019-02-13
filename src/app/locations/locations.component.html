@@ -1,0 +1,28 @@
+<h2>Top 5 closest Supermarkets:</h2>
+<table>
+    <tr>
+        <th>Name
+        </th>
+        <th>
+            Address
+        </th>
+        <th>Distance
+        </th>
+        <th>Action
+        </th>
+    </tr>
+    <tr *ngFor="let location of locations | slice:0:5">
+        <td>
+            {{location.name}}
+        </td>
+        <td>
+            {{location.address}}
+        </td>
+        <td>
+            <span> {{location.distance}}Km</span>
+        </td>
+        <td>
+            <button class="add-marker-btn btn" (click)="addMarker(location)">Add Marker</button>
+        </td>
+    </tr>
+</table>

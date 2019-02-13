@@ -1,0 +1,56 @@
+ [{
+         "name": "Rami Levi",
+         "address": "החרושת 12, רעננה",
+         "lat": 32.196,
+         "lng": 34.882
+     },
+     {
+         "name": "Rami Levi",
+         "address": "מבצע קדש 66, רמת גן,",
+         "lat": 32.103,
+         "lng": 34.831
+     },
+     {
+         "name": "Mega ",
+         "address": "אבן גבירול 30, תל אביב",
+         "lat": 32.076,
+         "lng": 34.783
+     }, {
+         "name": "Mega ",
+         "address": "יהודה המכבי 46, תל אביב",
+         "lat": 32.095,
+         "lng": 34.793
+     }, {
+         "name": "Shufersal",
+         "address": "דוחי",
+         "lat": 32.552,
+         "lng": 34.251
+     }, {
+         "name": "Rami Levi",
+         "address": "ישראל",
+         "lat": 32.896,
+         "lng": 34.102
+     },
+     {
+         "name": "Rami Levi",
+         "address": "איפשהו בארץ,",
+         "lat": 33.163,
+         "lng": 34.332
+     },
+     {
+         "name": "Mega ",
+         "address": "עוד כתובת",
+         "lat": 33.676,
+         "lng": 31.703
+     }, {
+         "name": "Mega ",
+         "address": "כתובת אחרת",
+         "lat": 31.595,
+         "lng": 30.783
+     }, {
+         "name": "Shufersal",
+         "address": "כתובת",
+         "lat": 29.215,
+         "lng": 31.857
+     }
+ ]

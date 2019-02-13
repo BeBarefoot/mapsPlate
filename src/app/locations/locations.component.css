@@ -1,0 +1,12 @@
+table {
+    display: inline;
+}
+
+tr {
+    margin: 50px
+}
+
+.add-marker-btn {
+    float: right;
+    cursor: pointer;
+}

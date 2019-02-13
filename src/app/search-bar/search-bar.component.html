@@ -1,0 +1,11 @@
+<h1>
+    Add Your Location
+</h1>
+<div class="input-container">
+    <input type="text" class="google-place-input" google-place (onSelect)="setAddress($event)" placeholder="Type to search..">
+    <button (click)="showUserLocation()">Use Your Location</button>
+</div>
+<br>
+<map-component [coordinates]="coordinates" [isUserLocation]="isUserLocation" *ngIf="showMap" [addMarkerCords]="addMarkerCords"></map-component>
+
+<locations-list *ngIf="showMap" [coordinates]="coordinates" (locationEvent)=markerLocation($event)></locations-list>
