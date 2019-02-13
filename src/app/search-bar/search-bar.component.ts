@@ -6,9 +6,12 @@ import { Component, NgZone, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
-  coordinates: any = ''
-  addMarkerCords: any = ''
-  isUserLocation: boolean = false
+  coordinates = {
+    lat: '',
+    lng: ''
+  }
+   addMarkerCords: any = ''
+   isUserLocation: boolean = false
   ngOnInit() { }
   showMap: boolean = false
   public title = 'Places';
@@ -17,7 +20,8 @@ export class SearchBarComponent implements OnInit {
     this.isUserLocation = false
     this.showMap = true
     this.zone.run(() => {
-      this.coordinates = addrObj
+      this.coordinates.lat = addrObj.lat
+      this.coordinates.lng = addrObj.lng
       // console.log(this.coordinates.lat);
       // console.log(this.coordinates.lng);
     });

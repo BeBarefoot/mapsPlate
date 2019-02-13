@@ -9,10 +9,16 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 export class MapsComponent implements OnInit, OnChanges {
   @Input() coordinates: Coordinates
   @Input() isUserLocation: IsUserLocation
-  @Input() addMarkerCords: addMarkerCords
+  @Input() addMarkerCords: AddMarkerCords
   lat: string = ''
   lng: string = ''
   constructor(private map: MapsService) { }
+
+  setCords(cords) {
+    this.lat = cords.lat
+    this.lng = cords.lng
+  }
+
   ngOnChanges() {
     if (this.isUserLocation) {
       this.map.getLocation().subscribe(data => {
@@ -20,10 +26,7 @@ export class MapsComponent implements OnInit, OnChanges {
         this.lng = data.longitude
       })
     }
-    else {
-      this.lat = this.coordinates.lat
-      this.lng = this.coordinates.lng
-    }
+    else this.setCords(this.coordinates)
   }
   ngOnInit() {
 

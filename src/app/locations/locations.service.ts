@@ -3,10 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Location {
-  name: string,
-  address: string,
-  lat: number,
-  lng: number,
+  name: any,
+  address: any,
+  lat: any,
+  lng: any,
   distance:number
 }
 
@@ -17,7 +17,7 @@ export interface Location {
 export class LocationsService {
   _url: string = ('assets/data.json')
 
-  getLocationList(): Observable<Location[]> {
+  getLocationList(): Observable<any[]> {
     return this.http.get<Location[]>(this._url)
   }
 
