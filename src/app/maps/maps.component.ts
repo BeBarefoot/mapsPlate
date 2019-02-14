@@ -1,4 +1,3 @@
-import { MapsService } from './maps.service';
 import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
@@ -8,28 +7,19 @@ import { Component, OnInit, Input, OnChanges } from '@angular/core';
 })
 export class MapsComponent implements OnInit, OnChanges {
   @Input() coordinates: Coordinates
-  @Input() isUserLocation: boolean
   @Input() addMarkerCords: any
-  lat: string = ''
-  lng: string = ''
-
-  constructor(private map: MapsService) { }
+  latitude: string = ''
+  longitude: string = ''
 
   setCords(cords: any) {
-    this.lat = cords.latitude
-    this.lng = cords.longitude
+    this.latitude = cords.latitude
+    this.longitude = cords.longitude
   }
 
   ngOnChanges() {
-    if (this.isUserLocation) {
-      this.map.getLocation().subscribe(data => {
-        this.setCords(data)
-      })
-    }
-    else this.setCords(this.coordinates)
+    this.setCords(this.coordinates)
   }
   ngOnInit() {
-
   }
 
 }

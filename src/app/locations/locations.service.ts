@@ -23,14 +23,16 @@ export class LocationsService {
     return this.http.get<Location[]>(this._url)
   }
 
-  calcDistance(lat1, lng1, lat2, lng2) {
-    if ((lat1 == lat2) && (lng1 == lng2)) {
+  calcDistance(cords1, cords2) {
+    
+    cords2.latitude
+    if ((cords1.latitude == cords2.latitude) && (cords1.longitude == cords2.longitude)) {
       return 0;
     }
     else {
-      var radlat1 = Math.PI * lat1 / 180;
-      var radlat2 = Math.PI * lat2 / 180;
-      var theta = lng1 - lng2;
+      var radlat1 = Math.PI * cords1.latitude / 180;
+      var radlat2 = Math.PI * cords2.latitude / 180;
+      var theta = cords1.longitude - cords2.longitude;
       var radtheta = Math.PI * theta / 180;
       var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
       if (dist > 1) {

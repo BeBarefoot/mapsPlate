@@ -11,6 +11,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { GooglePlacesDirective } from './google-places.directive';
 import { MapsComponent } from './maps/maps.component';
 import { LocationsComponent } from './locations/locations.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoute: Routes = [
   { path: '', component: SearchBarComponent  }
@@ -25,6 +26,7 @@ const appRoute: Routes = [
     LocationsComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoute),

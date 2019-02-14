@@ -14,7 +14,7 @@ export class LocationsComponent implements OnChanges {
   constructor(private locationService: LocationsService) { }
 
   calcDistance(cords, location) {
-    return this.locationService.calcDistance(cords.latitude, cords.longitude, location.latitude, location.longitude)
+    return this.locationService.calcDistance(cords, location)
   }
 
   ngOnChanges() {

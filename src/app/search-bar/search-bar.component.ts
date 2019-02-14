@@ -1,4 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
+import { MapsService } from '../maps/getUserLocation.service';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -6,6 +8,10 @@ import { Component, NgZone, OnInit } from '@angular/core';
   styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
+  constructor(private zone: NgZone, private map: MapsService) { }
+
+  formInput: string = ''
+
   coordinates = {
     latitude: '',
     longitude: ''
@@ -19,21 +25,23 @@ export class SearchBarComponent implements OnInit {
   showMap: boolean = false
   public title = 'Places';
 
-  setAddress(addrObj) {
+  setAddress(addrObj: any) {
     this.isUserLocation = false
     this.showMap = true
+    this.coordinates = addrObj
     this.zone.run(() => {
       this.coordinates.latitude = addrObj.lat
       this.coordinates.longitude = addrObj.lng
-    });
+    })
   }
   showUserLocation() {
-    this.showMap = true
-    this.isUserLocation = true
+    this.formInput = ''
+    this.map.getLocation().subscribe(data => {
+      this.coordinates = data
+      this.showMap = true
+    })
   }
   markerLocation(ev: any) {
-   return this.addMarkerCords = ev
+    this.addMarkerCords = ev
   }
-
-  constructor(private zone: NgZone) { }
 }
