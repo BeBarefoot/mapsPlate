@@ -7,6 +7,8 @@ import { LocationsService } from "./locations.service";
   styleUrls: ['./locations.component.css']
 })
 export class LocationsComponent implements OnChanges {
+  bestSupermarket: any
+  numberOfResults: number = 5
   private locations: any = []
   private action: string = 'Add Marker'
   @Input() coordinates: Coordinates
@@ -23,8 +25,9 @@ export class LocationsComponent implements OnChanges {
         data.map(location => {
           location.distance = this.calcDistance(this.coordinates, location)
         })
-        this.locations = data
-        this.locations.sort((a, b) => a.distance - b.distance)
+        data.sort((a, b) => a.distance - b.distance)
+        this.locations = data.slice(0, this.numberOfResults)
+        this.bestSupermarket = this.locationService.findBestSupermarket(this.locations)
       })
   }
   addMarker(location: any) {

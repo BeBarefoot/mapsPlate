@@ -23,8 +23,28 @@ export class LocationsService {
     return this.http.get<Location[]>(this._url)
   }
 
+  findBestSupermarket(locations: any) {
+    let locationArray = []
+    locations.forEach(location => {
+      locationArray.push(location.name)
+    }
+    )
+    // let mostFrequant = []
+    // locationArray.sort().filter((name, index) => {
+    // })
+
+    let newArr = locationArray.sort()
+    let most = [undefined, 0]
+    let counter = 0
+    newArr.reduce((old, next) => {
+      console.log(old, next);
+      old == next ? ++counter > most[1] && (most = [next, counter]) : (counter = 1)
+      return next
+    })
+    return most[0]
+  }
+
   calcDistance(cords1, cords2) {
-    
     cords2.latitude
     if ((cords1.latitude == cords2.latitude) && (cords1.longitude == cords2.longitude)) {
       return 0;
@@ -45,7 +65,4 @@ export class LocationsService {
       return dist.toFixed(2);
     }
   }
-
-
-
 }

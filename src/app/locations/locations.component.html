@@ -11,7 +11,7 @@
         <th>Action
         </th>
     </tr>
-    <tr *ngFor="let location of locations | slice:0:5">
+    <tr *ngFor="let location of locations">
         <td>
             {{location.name}}
         </td>
@@ -28,3 +28,4 @@
 </table>
 
 <h1>Best Supermarket spread near you:</h1>
+{{bestSupermarket}}
