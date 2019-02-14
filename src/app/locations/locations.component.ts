@@ -13,21 +13,21 @@ export class LocationsComponent implements OnChanges {
   @Output() locationEvent = new EventEmitter<any>()
   constructor(private locationService: LocationsService) { }
 
-  calcDistance(cords,location){
-    this.locationService.calcDistance(cords.lat, cords.lng, location.lat, location.lng)
+  calcDistance(cords, location) {
+    return this.locationService.calcDistance(cords.latitude, cords.longitude, location.latitude, location.longitude)
   }
 
   ngOnChanges() {
     this.locationService.getLocationList()
       .subscribe(data => {
         data.map(location => {
-           location.distance = this.calcDistance(this.coordinates, location)
+          location.distance = this.calcDistance(this.coordinates, location)
         })
         this.locations = data
         this.locations.sort((a, b) => a.distance - b.distance)
       })
   }
-  addMarker(location) {
+  addMarker(location: any) {
     this.locationEvent.emit(location)
   }
 }

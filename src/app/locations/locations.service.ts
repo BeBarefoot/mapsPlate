@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 export interface Location {
   name: any,
   address: any,
-  lat: any,
-  lng: any,
-  distance:number
+  lat: number,
+  lng: number,
+  distance: number
 }
 
 @Injectable({
@@ -17,11 +17,13 @@ export interface Location {
 export class LocationsService {
   _url: string = ('assets/data.json')
 
+  constructor(private http: HttpClient) {
+  }
   getLocationList(): Observable<any[]> {
     return this.http.get<Location[]>(this._url)
   }
 
-  calcDistance(lat1, lng1, lat2, lng2){
+  calcDistance(lat1, lng1, lat2, lng2) {
     if ((lat1 == lat2) && (lng1 == lng2)) {
       return 0;
     }
@@ -42,7 +44,6 @@ export class LocationsService {
     }
   }
 
-  constructor(private http: HttpClient) {
-  }
+
 
 }
