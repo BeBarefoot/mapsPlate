@@ -1,6 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { MapsService } from '../maps/getUserLocation.service';
-
+import { MapsService } from '../services/getUserLocation.service';
 
 @Component({
   selector: 'app-search-bar',

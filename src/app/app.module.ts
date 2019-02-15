@@ -11,10 +11,12 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { GooglePlacesDirective } from './google-places.directive';
 import { MapsComponent } from './maps/maps.component';
 import { LocationsComponent } from './locations/locations.component';
+import { AboutComponent } from './about/about.component';
 import { FormsModule } from '@angular/forms';
 
 const appRoute: Routes = [
-  { path: '', component: SearchBarComponent  }
+  { path: '', component: SearchBarComponent  },
+  { path: 'about', component: AboutComponent  },
 ]
 
 @NgModule({
@@ -23,7 +25,8 @@ const appRoute: Routes = [
     SearchBarComponent,
     GooglePlacesDirective,
     MapsComponent,
-    LocationsComponent
+    LocationsComponent,
+    AboutComponent
   ],
   imports: [
     FormsModule,

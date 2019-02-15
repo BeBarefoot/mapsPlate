@@ -3,10 +3,18 @@ table {
 }
 
 tr {
-    margin: 50px
+    margin: 50px;
+}
+
+td {
+    margin: 5em;
 }
 
 .add-marker-btn {
     float: right;
     cursor: pointer;
+}
+
+button {
+    width: 150px;
 }

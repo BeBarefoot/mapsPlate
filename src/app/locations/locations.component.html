@@ -22,7 +22,8 @@
             <span> {{location.distance}}Km</span>
         </td>
         <td>
-            <button class="add-marker-btn btn" (click)="addMarker(location)">{{action}}</button>
+            <button class="add-marker-btn btn" (click)="addMarker(location,$event)">
+                {{action}}</button>
         </td>
     </tr>
 </table>
